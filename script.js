@@ -5,8 +5,7 @@ function generatePassword (){
   let alpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   let numbersList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   let specialSymbol = ['!','#','$','%','&','*','+','-',':',';','?','@','_','~'];
- // let specialSymbol = ['!'];
-
+  
   let upperCase = true
   let lowerCase = true
   let numbers = true
@@ -29,49 +28,49 @@ function generatePassword (){
       lowerCase = confirm('Do you want include lower case?');
       specialChar = confirm('Do you want use special character?');
       numbers = confirm('Do you want use numbers?');
+      if (upperCase===true || lowerCase ===true || specialChar===true || numbers===true)
+      {
 
-        for (let i=0; i<passwordLength;i++){
+            for (let i=0; i<passwordLength;i++){
 
 
-         if (upperCase) {
-            upperPassword = alpha[Math.floor(Math.random() * alpha.length)];
-         }
+             if (upperCase) {
+                upperPassword = alpha[Math.floor(Math.random() * alpha.length)];
+             }
 
-          if (lowerCase) {
-           lowerPassword = alpha[Math.floor(Math.random() * alpha.length)];
-             result = lowerPassword.toLowerCase();
+             if (lowerCase) {
+                lowerPassword = alpha[Math.floor(Math.random() * alpha.length)];
+                result = lowerPassword.toLowerCase();
+             }
 
-        }
-          if (specialChar) {
-           specialPassword = specialSymbol[Math.floor(Math.random() * specialSymbol.length)];
-         }
+             if (specialChar) {
+                 specialPassword = specialSymbol[Math.floor(Math.random() * specialSymbol.length)];
+             }
 
-          if (numbers) {
-             numberPassword = numbersList[Math.floor(Math.random() * numbersList.length)];
-  
-           }
+             if (numbers) {
+                 numberPassword = numbersList[Math.floor(Math.random() * numbersList.length)];
+             }
 
-            finalpwd = finalpwd + upperPassword + result + specialPassword + numberpassword ;
+             finalpwd = finalpwd + upperPassword + result + specialPassword + numberpassword ;
 
-            finalpwdlength=finalpwd.length;
+             finalpwdlength=finalpwd.length;
             
-            
-            console.log (finalpwd)
-            if (finalpwdlength >=passwordLength){
+             if (finalpwdlength >=passwordLength){
                i=passwordLength;
                lastPassword=finalpwd.substring(0,passwordLength);
+             }
+
             }
-
-    }
-
-  }
-  else {
+          } 
+          else{
+            alert('You must select atleast one character')
+          }
+        
+        } 
+        else {
       alert('password must contain min 8 and max 128');
   }
   return lastPassword;
-
-
-  
 }
 
 
