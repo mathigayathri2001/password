@@ -15,7 +15,7 @@ function generatePassword (){
   let lowerPassword = ''
   let result = ''
   let specialPassword = ''
-  let numberpassword = 0
+  let numberPassword = 0
   let finalpwd = ''
   let finalpwdlength = 0
   let lastPassword =''
@@ -48,10 +48,10 @@ function generatePassword (){
              }
 
              if (numbers) {
-                 numberPassword = numbersList[Math.floor(Math.random() * numbersList.length)];
+                 numberPassword = Math.floor(Math.random() * 10);
              }
 
-             finalpwd = finalpwd + upperPassword + result + specialPassword + numberpassword ;
+             finalpwd = finalpwd + upperPassword + result + specialPassword + numberPassword ;
 
              finalpwdlength=finalpwd.length;
             
